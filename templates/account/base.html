@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block head_title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.js' %}"/>
+    <title>CHEW and CHEER</title>
+
+    {% include 'snippets/header.html' %}
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+
+{#    {% if messages %}#}
+{#    <div>#}
+{#      <strong>Messages:</strong>#}
+{#      <ul>#}
+{#        {% for message in messages %}#}
+{#        <li>{{message}}</li>#}
+{#        {% endfor %}#}
+{#      </ul>#}
+{#    </div>#}
+{#    {% endif %}#}
+{##}
+{#    <div>#}
+{#      <strong>Menu:</strong>#}
+{#      <ul>#}
+{#        {% if user.is_authenticated %}#}
+{#        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>#}
+{#        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>#}
+{#        {% else %}#}
+{#        <li><a href="{% url 'account_login' %}">Sign In</a></li>#}
+{#        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>#}
+{#        {% endif %}#}
+{#      </ul>#}
+{#    </div>#}
+    <div class="main">
+
+
+            {% block content %}
+
+
+            {% endblock %}
+
+
+    </div>
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+  </body>
+
+  <footer style="
+      position: relative;
+      display: flex;
+      justify-content: center;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 20px 15px;
+      width: 100%;
+      margin-top: 100px">
+       {% include 'snippets/footer.html' %}
+  </footer>
+</html>
