@@ -14,12 +14,6 @@ This project is implementation for the following topics related to technologies 
 7. Used GitHub Social Login and Google social Login
 8. Google Social Login don't work properly since It's for development phase and have to add user to list who can log in
 
--Implemented Crud Operations with Django Forms
-
-1. build crud operation create, update, delete, read function views
-2. build templates for handling it
-3. Created Django forms
-
 
 -Deployed on Heroku
 
