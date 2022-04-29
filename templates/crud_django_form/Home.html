@@ -3,11 +3,9 @@
 {% block content %}
 
 
-
+    <h1 style="alignment: center" class="text-center">CRUD OPERATIONS USING DJANGO FORMS</h1>
 
     <div class="row" style="padding: 100px" >
-        <h1 style="alignment: center" >CRUD OPERATIONS USING DJANGO FORMS</h1>
-
 
         <div class="col-sm-4"    >
             <h4 class="text-centre alert alert-info">Add New Item</h4>
@@ -48,19 +46,16 @@
                           <a href="{% url 'curdformupdate' item.id %}" class="btn btn-success form-control">Edit</a>
                       </td>
                       <td align="centre">
-                          {% include 'crud_django_form/modal.html' %}
                           <form action="{% url 'curdformdelete' item.id %}" method="post" class="d-inline">
                               {% csrf_token %}
                               <input type="submit" onclick="return confirm('Are you sure to delete?')" class="btn btn-danger form-control" value="Delete">
                           </form>
-{#                             <button class="btn btn-danger form-control" onClick="deleteItem({{item.id}})" data-toggle="modal" data-target="#confirmDeleteModal" id="{{ item.id }}">DELETE</button>#}
-{#                             <button class="btn btn-danger form-control " style="width: 100px" onClick="deleteUser({{user.id}})">DELETE</button>#}
                       </td>
                     </tr>
                   {% endfor %}
                   </tbody>
                 </table>
-
+                <h6 class="text-danger">Note: delete operation can be only performed by Admin, Otherwise you will be logged out.</h6>
                 <ul class="pagination">
                     {% if items.has_previous %}
                          <li class="page-item">
@@ -109,31 +104,4 @@
         </div>
 
     </div>
-
-
-
 {% endblock %}
-
-{#<script>#}
-{#    function deleteUser(id) {#}
-{#      $(document).ready(function(){#}
-{#        $("#confirmDeleteModal").modal();#}
-{#        $("#confirmDeleteButtonModal").click(function(){#}
-{#          $.ajax({#}
-{#            url: '{% url "curdformdelete" %}',#}
-{#            data: {#}
-{#                'id': id,#}
-{#            },#}
-{#            dataType: 'json',#}
-{#            success: function (data) {#}
-{##}
-{#                if (data.deleted) {#}
-{#                  $("#itemTable #item-" + id).remove();#}
-{#                }#}
-{#            }#}
-{#        });#}
-{#        });#}
-{##}
-{#      });#}
-{#    }#}
-{#</script>#}
