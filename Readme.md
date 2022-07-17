@@ -13,7 +13,7 @@ This project is implementation for the following topics related to technologies 
 6. Build custom templates for a lot of functionalities, you juts have to place template with same name inside same location which would be used by all auth
 7. Used GitHub Social Login and Google social Login
 8. Google Social Login don't work properly since It's for development phase and have to add user to list who can log in
-9. oreover, we can merge different social logins into one account with all auth.
+9. Moreover, we can merge different social logins into one account with all auth.
 
 -Implemented Crud Operations with Django Forms
 
